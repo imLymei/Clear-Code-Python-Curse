@@ -1,7 +1,9 @@
 import random, pyperclip, os
 
+#? Comando para limpar o terminal ?#
 clear = lambda: os.system('cls')
 
+#? Função para codificar o texto e criar uma key ?#
 def codification(key,letters,text):
     letters_length = len(letters)
     new_text = list(text)
@@ -23,6 +25,7 @@ def codification(key,letters,text):
 
     return final_text
 
+#? Função para decodificar um texto com uma key ?#
 def decoding(key,letters,text):
     letters_length = len(letters)
     new_text = list(text)
@@ -44,6 +47,7 @@ def decoding(key,letters,text):
 
     return final_text
 
+#? Rotina de codificação ?#
 def code_main(letters):
     clear()
     text = input('Digite uma frase: ')
@@ -59,6 +63,7 @@ def code_main(letters):
     print('Aperte enter para continuar...')
     input()
 
+#? Rotina de decodificação ?#
 def decode_main(letters):
     clear()
     text = input('Digite uma frase: ')
@@ -71,6 +76,7 @@ def decode_main(letters):
     print('Aperte enter para continuar...')
     input()
 
+#? Rotina do menu ?#
 def menu():
     response = 0
 
@@ -83,9 +89,14 @@ def menu():
 
     return response
 
+#? Rotina principal ?#
 def main():
-
-    letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9',' ','!','?','@','$','#','*','%','&','/','.',':',',',';','<','>',')','(',']','[','}','{','~','^','`','"',"'",'+','-','=','_','|']
+    #? Caracteres disponíveis para conversão ?#
+    letters = [\
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\
+    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
+    '0','1','2','3','4','5','6','7','8','9',' ','!','?','@','$','#','*','%','&','/',\
+    '.',':',',',';','<','>',')','(',']','[','}','{','~','^','`','"',"'",'+','-','=','_','|']
 
     response = 0
     while response != '3':
@@ -95,5 +106,6 @@ def main():
         elif response == '2':
             decode_main(letters)
 
+#? Prevenir ser executado com import ?#
 if __name__ == '__main__':
     main()
