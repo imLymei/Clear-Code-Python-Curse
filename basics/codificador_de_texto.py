@@ -1,3 +1,5 @@
+# Programa para codificar e decodificar textos com uma key aleatória
+
 import random, pyperclip, os
 
 clear = lambda: os.system('cls')  # Comando para limpar o terminal 

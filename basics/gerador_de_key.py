@@ -1,3 +1,5 @@
+# Programa para gerar ou validar uma key que segue um padrão
+
 import random
 
 def key_default_check(key):

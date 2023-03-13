@@ -1,3 +1,4 @@
+# Programa para verificar se um numero é primo e descobrir o próximo e o anterior dele
 
 def is_prime(number):  # Função para verificar se um numero é primo  
     prime = True
