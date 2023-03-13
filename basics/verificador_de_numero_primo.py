@@ -59,4 +59,5 @@ def main():  # Rotina principal
 
 
 if __name__ == '__main__':  # Prevenir ser executado com import 
+    
     main()
