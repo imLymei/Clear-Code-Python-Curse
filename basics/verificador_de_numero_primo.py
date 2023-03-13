@@ -1,15 +1,16 @@
-# Programa para verificar se um numero é primo e descobrir o próximo e o anterior dele
+# Programa para verificar se um número é primo e descobrir o próximo e o anterior dele
 
-def is_prime(number):  # Função para verificar se um numero é primo  
+def is_prime(number):  # Função para verificar se um número é primo 
+    '''Verifica se um número é primo''' 
     prime = True
     divider = 2
 
-    if number <= 1:  # Verifica se o numero é menor ou igual a 1
+    if number <= 1:  # Verifica se o número é menor ou igual a 1
         
         return False
     else:
         
-        while prime == True and divider <= number/2:  # Verifica se o numero é divisível por algum numero menor ou igual a metade dele
+        while prime == True and divider <= number/2:  # Verifica se o número é divisível por algum número menor ou igual a metade dele
             
             if number%divider == 0:
                 
@@ -21,8 +22,9 @@ def is_prime(number):  # Função para verificar se um numero é primo
         return prime
 
 
-def next_prime(number, tick):  # Função para descobrir o próximo numero primo 
-    if not is_prime(number+tick):  # Verifica se o numero é primo
+def next_prime(number, tick):  # Função para descobrir o próximo número primo 
+    '''Encontra o proximo número primo'''
+    if not is_prime(number+tick):  # Verifica se o número é primo
         
         return next_prime(number, tick+1)
     else:
@@ -30,7 +32,8 @@ def next_prime(number, tick):  # Função para descobrir o próximo numero primo
         return number+tick
 
 
-def previous_prime(number, tick):  # Função para descobri o numero primo anterior 
+def previous_prime(number, tick):  # Função para descobri o número primo anterior 
+    '''Encontra o número primo anterior'''
     if not is_prime(number-tick):
         
         return previous_prime(number, tick+1)
