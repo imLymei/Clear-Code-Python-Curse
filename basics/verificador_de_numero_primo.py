@@ -1,50 +1,61 @@
 
-#? Função para verificar se um numero é primo  ?#
-def is_prime(number):
+def is_prime(number):  # Função para verificar se um numero é primo  
     prime = True
     divider = 2
 
-    if number <= 1:
+    if number <= 1:  # Verifica se o numero é menor ou igual a 1
+        
         return False
     else:
-        while prime == True and divider <= number/2:
+        
+        while prime == True and divider <= number/2:  # Verifica se o numero é divisível por algum numero menor ou igual a metade dele
+            
             if number%divider == 0:
+                
                 prime = False
             else:
+                
                 divider += 1
 
         return prime
 
-#? Função para descobrir o próximo numero primo ?#
-def next_prime(number, tick):
-    if is_prime(number+tick) == False:
+
+def next_prime(number, tick):  # Função para descobrir o próximo numero primo 
+    if not is_prime(number+tick):  # Verifica se o numero é primo
+        
         return next_prime(number, tick+1)
     else:
+        
         return number+tick
 
-#? Função para descobri o numero primo anterior ?#
-def previous_prime(number, tick):
-    if is_prime(number-tick) == False:
+
+def previous_prime(number, tick):  # Função para descobri o numero primo anterior 
+    if not is_prime(number-tick):
+        
         return previous_prime(number, tick+1)
     else:
+        
         return number-tick
 
-#? Rotina principal ?#
-def main():
-    my_number = int(input('Digite um número: '))
-    print('')
+
+def main():  # Rotina principal 
+    my_number = int(input('Digite um número:\n'))
 
     if is_prime(my_number):
-        print(f'{my_number} é um número primo.')
+        
+        print(f'{my_number} é um número primo.\n')
     else:
-        print(f'{my_number} não é um número primo.')
+        
+        print(f'{my_number} não é um número primo.\n')
 
-    previous_number = previous_prime(my_number, 1)
+    if my_number > 1:
+        
+        previous_number = previous_prime(my_number, 1)
+        print(f'O primo anterior é: {previous_number}({previous_number-my_number}).')
+
     next_number = next_prime(my_number, 1)
-
-    print(f'O primo anterior é: {previous_number}({previous_number-my_number}).')
     print(f'O proximo primo é : {next_number}(+{next_number-my_number}).')
 
-#? Prevenir ser executado com import ?#
-if __name__ == '__main__':
+
+if __name__ == '__main__':  # Prevenir ser executado com import 
     main()
