@@ -6,6 +6,7 @@ clear = lambda: os.system('cls')  # Comando para limpar o terminal
 
 
 def codification(key,letters,text):  # Função para codificar o texto e criar uma key 
+    '''Codifica o texto recebido com uma key'''
     letters_length = len(letters)  # Tamanho da lista de caracteres
     new_text = list(text)  # Lista com os caracteres do texto
     new_text_length = len(new_text)  # Tamanho do text
@@ -33,6 +34,7 @@ def codification(key,letters,text):  # Função para codificar o texto e criar u
 
 
 def decoding(key,letters,text):  # Função para decodificar um texto com uma key 
+    '''Decodifica um texto com uma key'''
     letters_length = len(letters)
     new_text = list(text)
     new_text_length = len(new_text)
@@ -60,6 +62,7 @@ def decoding(key,letters,text):  # Função para decodificar um texto com uma ke
 
 
 def code_main(letters):  # Rotina de codificação 
+    '''Executa a rotina de codificação'''
     clear()
 
     text = input('Digite uma frase: ')
@@ -76,6 +79,7 @@ def code_main(letters):  # Rotina de codificação
 
 
 def decode_main(letters):  # Rotina de decodificação 
+    '''Executa a rotina de decodificação'''
     clear()
 
     text = input('Digite uma frase: ')
@@ -89,6 +93,7 @@ def decode_main(letters):  # Rotina de decodificação
 
 
 def menu():  # Rotina do menu 
+    '''Executa a rotina do menu'''
     response = 0
 
     while response != '1' and response != '2' and response != '3':
