@@ -2,7 +2,7 @@
 
 import random
 
-def key_default_check(key):
+def key_default_check(key:str) -> bool:
     '''Verifica se a key segue o padrão 123-123456789'''
     if len(key) == 13:  # Verifica se a key tem 13 caracteres
 
@@ -15,7 +15,7 @@ def key_default_check(key):
     return False
 
 
-def key_splitter(key):
+def key_splitter(key:str) -> (int, int):
     '''Divide a key em 2 partes, a primeira com 3 caracteres antes do hífen e a segunda com 9 caracteres depois do hífen'''
     key = key.split('-')  # Separa a key em 2 partes, a primeira com 3 caracteres e a segunda com 9 caracteres
 
@@ -33,7 +33,7 @@ def key_splitter(key):
     return divider, real_key
 
 
-def key_validation(key):
+def key_validation(key:str) -> bool:
     '''Verifica se a key é válida'''
     if key_default_check(key):
         
@@ -54,7 +54,7 @@ def key_validation(key):
     return False
 
 
-def key_generator():
+def key_generator() -> str:
     '''Gera keys aleatórias até uma ser válida'''
     key = ''
 

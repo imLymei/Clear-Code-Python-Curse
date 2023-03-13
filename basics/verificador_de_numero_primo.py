@@ -1,6 +1,6 @@
 # Programa para verificar se um número é primo e descobrir o próximo e o anterior dele
 
-def is_prime(number):  # Função para verificar se um número é primo 
+def is_prime(number:int) -> bool:  # Função para verificar se um número é primo 
     '''Verifica se um número é primo''' 
     prime = True
     divider = 2
@@ -22,7 +22,7 @@ def is_prime(number):  # Função para verificar se um número é primo
         return prime
 
 
-def next_prime(number, tick):  # Função para descobrir o próximo número primo 
+def next_prime(number:int, tick:int) -> int:  # Função para descobrir o próximo número primo 
     '''Encontra o proximo número primo'''
     if not is_prime(number+tick):  # Verifica se o número é primo
         
@@ -32,7 +32,7 @@ def next_prime(number, tick):  # Função para descobrir o próximo número prim
         return number+tick
 
 
-def previous_prime(number, tick):  # Função para descobri o número primo anterior 
+def previous_prime(number:int, tick:int) -> int:  # Função para descobri o número primo anterior 
     '''Encontra o número primo anterior'''
     if not is_prime(number-tick):
         

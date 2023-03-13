@@ -5,7 +5,7 @@ import random, pyperclip, os
 clear = lambda: os.system('cls')  # Comando para limpar o terminal 
 
 
-def codification(key,letters,text):  # Função para codificar o texto e criar uma key 
+def codification(key:int,letters:list,text:str) -> str:  # Função para codificar o texto e criar uma key 
     '''Codifica o texto recebido com uma key'''
     letters_length = len(letters)  # Tamanho da lista de caracteres
     new_text = list(text)  # Lista com os caracteres do texto
@@ -33,7 +33,7 @@ def codification(key,letters,text):  # Função para codificar o texto e criar u
     return final_text
 
 
-def decoding(key,letters,text):  # Função para decodificar um texto com uma key 
+def decoding(key:int,letters:list,text:str) -> str:  # Função para decodificar um texto com uma key 
     '''Decodifica um texto com uma key'''
     letters_length = len(letters)
     new_text = list(text)
@@ -61,7 +61,7 @@ def decoding(key,letters,text):  # Função para decodificar um texto com uma ke
     return final_text
 
 
-def code_main(letters):  # Rotina de codificação 
+def code_main(letters:list):  # Rotina de codificação 
     '''Executa a rotina de codificação'''
     clear()
 
@@ -78,7 +78,7 @@ def code_main(letters):  # Rotina de codificação
     input()
 
 
-def decode_main(letters):  # Rotina de decodificação 
+def decode_main(letters:list):  # Rotina de decodificação 
     '''Executa a rotina de decodificação'''
     clear()
 
