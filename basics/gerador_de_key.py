@@ -28,16 +28,13 @@ def key_splitter(key):
         
         real_key += int(number)
 
-    return [divider, real_key]
+    return divider, real_key
 
 
 def key_validation(key):
     if key_default_check(key):
         
-        key = key_splitter(key)
-
-        divider = key[0]
-        real_key = key[1]
+        divider, real_key = key_splitter(key)
 
         if divider == 0:  # Verifica se o divisor é 0
             
@@ -79,10 +76,10 @@ def main():
 
     if key_validation(key):
         
-        print(f'A key {key} é válida.')
+        print(f'\nA key {key} é válida.')
     else:
         
-        print(f'A key {key} não é válida.')
+        print(f'\nA key {key} não é válida.')
 
     print(f'\nA key gerada é: {key_generator()}')
 
